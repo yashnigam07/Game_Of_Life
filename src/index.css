@@ -1,0 +1,80 @@
+/* src/index.css or a similar global CSS file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Keyframes and Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes smoothSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global Styles */
+body {
+  @apply bg-gradient-to-br from-deepNavy to-slateGray text-lightSilver font-sans;
+}
+
+.grid-wrapper {
+  @apply p-6 rounded-lg bg-white bg-opacity-10 backdrop-blur-sm shadow-elegant;
+}
+
+button {
+  @apply bg-slateBlue text-lightSilver rounded-lg text-sm cursor-pointer transition-transform duration-200 ease-in-out;
+}
+
+button:hover {
+  @apply bg-mintGreen transform scale-105 shadow-lg;
+}
+
+button:focus {
+  @apply outline-none ring-2 ring-mintGreen ring-opacity-70;
+}
+
+button.reset {
+  @apply bg-coolGray;
+}
+
+button.reset:hover {
+  @apply bg-charcoal text-lightSilver;
+}
+
+/* Custom Classes for Animations */
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease-in;
+}
+
+.smooth-slide {
+  animation: smoothSlide 0.5s ease-out;
+}
