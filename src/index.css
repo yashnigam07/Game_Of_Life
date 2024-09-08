@@ -1,4 +1,4 @@
-/* src/index.css or a similar global CSS file */
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,10 +44,17 @@ body {
 
 .grid-wrapper {
   @apply p-6 rounded-lg bg-white bg-opacity-10 backdrop-blur-sm shadow-elegant;
+  
+  /* Ensure responsive padding and layout for mobile screens */
+  @apply md:p-8 lg:p-10 xl:p-12; 
+  @apply md:rounded-xl lg:rounded-2xl;
 }
 
 button {
   @apply bg-slateBlue text-lightSilver rounded-lg text-sm cursor-pointer transition-transform duration-200 ease-in-out;
+  
+  /* Adjust button size and font for larger screens */
+  @apply md:text-base lg:text-lg xl:text-xl;
 }
 
 button:hover {
@@ -77,4 +84,13 @@ button.reset:hover {
 
 .smooth-slide {
   animation: smoothSlide 0.5s ease-out;
+}
+
+/* Add responsive typography */
+h1, h2, h3 {
+  @apply text-lg md:text-xl lg:text-2xl xl:text-3xl;
+}
+
+p {
+  @apply text-base md:text-lg lg:text-xl xl:text-2xl;
 }
